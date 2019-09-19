@@ -1,0 +1,101 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
+    font-family: Poppins
+
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    background: #111
+
+.container
+    position: relative
+    width: 500px
+    padding: 40px
+    background: #151515
+
+.title
+    color: #999999
+    margin-bottom: 45px
+
+.input
+    &-field
+        position: relative
+        height: 40px
+        width: 100%
+    &-input[type='text']
+        position: absolute
+        background: transparent
+        border: none
+        box-shadow: none
+        font-size: 16px
+        color: #fff
+        width: 100%
+        &:focus + .input-label
+           transform:  translateY(-35px)
+           font-size: 14px
+           color: #fff
+           background: #ff006a
+           padding: 2px 6px
+        &:valid + .input-label
+           transform:  translateY(-35px)
+           font-size: 14px
+           color: #fff
+           background: #ff006a
+           padding: 2px 6px
+        &:focus ~ .input-span
+            &:before
+                transform: scaleX(1)
+                transform-origin: left
+                transition: transform 0.5s ease-in-out
+        &:valid ~ .input-span
+            &:before
+                transform: scaleX(1)
+                transform-origin: left
+                transition: transform 0.5s ease-in-out
+    &-span
+        position: absolute
+        bottom: 0
+        right: 0
+        display: block
+        background: #555
+        width: 100%
+        height: 2px
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: #00b0ff
+            transform: scaleX(0)
+            transform-origin: right
+            transition: transform 0.5s ease-in-out
+
+    &-label
+        position: absolute
+        top: 0
+        left: 0
+        color: #555
+        pointer-events: none
+        display: block
+        transition: 0.5s
+
+.btn
+    margin-top: 20px
+    border: none
+    box-shadow: none
+    padding: 10px 25px
+    background: #333
+    color: #ffffff
+    &:hover
+        background: #00bcd4
+        cursor: pointer
+
+
+
